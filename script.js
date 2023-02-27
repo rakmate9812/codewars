@@ -105,3 +105,22 @@
 // console.log(solution(10));
 
 // // ----------------------------------------------------------------------------------------------------------------------------
+// // Codewars KATA 2023 02 27 - https://www.codewars.com/kata/52449b062fb80683ec000024
+// function generateHashtag(str) {
+//   if (str.trim().length === 0) return false;
+
+//   let final = "";
+//   str.split(" ").forEach((el) => {
+//     if (el.trim().length === 0) return;
+//     final += el[0].toUpperCase();
+//     final += el.slice(1);
+//   });
+
+//   if (final.length >= 140) return false;
+
+//   if (final[0] === "#") return final;
+
+//   return "#" + final;
+// }
+
+// console.log(generateHashtag("code" + " ".repeat(140) + "wars"));
