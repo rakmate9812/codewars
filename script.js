@@ -12,7 +12,7 @@
 // console.log(narcissistic(700));
 
 // ----------------------------------------------------------------------------------------------------------------------------
-// // Codewars KATA 2023 02 18 - https://www.codewars.com/kata/556deca17c58da83c00002db/train/javascript
+// // Codewars KATA 2023 02 18 - https://www.codewars.com/kata/556deca17c58da83c00002db
 // function tribonacci(signature, n) {
 //   //   Guard clauses
 //   if (n === 0) return [];
@@ -38,7 +38,7 @@
 // console.log(tribonacci([1, 1, 1], 5));
 
 // ----------------------------------------------------------------------------------------------------------------------------
-// // Codewars KATA 2023 02 18 - https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/javascript
+// // Codewars KATA 2023 02 18 - https://www.codewars.com/kata/5667e8f4e3f572a8f2000039
 // function accum(s) {
 //   let fullStr = "";
 //   s = s.toLowerCase();
@@ -62,7 +62,7 @@
 // console.log(accum("aBcDE"));
 
 // ----------------------------------------------------------------------------------------------------------------------------
-// // Codewars KATA 2023 02 20 - https://www.codewars.com/kata/578553c3a1b8d5c40300037c/train/javascript
+// // Codewars KATA 2023 02 20 - https://www.codewars.com/kata/578553c3a1b8d5c40300037c
 // const binaryArrayToNumber = (arr) => {
 //   let decimal = 0;
 //   arr.reverse().forEach((el, i) => {
@@ -75,7 +75,7 @@
 // console.log(binaryArrayToNumber([1, 0, 1, 0, 1]));
 
 // // ----------------------------------------------------------------------------------------------------------------------------
-// // Codewars KATA 2023 02 21 - https://www.codewars.com/kata/585d7d5adb20cf33cb000235/train/javascript
+// // Codewars KATA 2023 02 21 - https://www.codewars.com/kata/585d7d5adb20cf33cb000235
 // function findUniq(arr) {
 //   if (arr[0] !== arr[1] && arr[0] !== arr[2]) return arr[0];
 //   if (arr[0] !== arr[1] && arr[1] !== arr[2]) return arr[1];
@@ -93,7 +93,7 @@
 // console.log(findUniq([1, 8, 1, 1, 1, 1, 9]));
 
 // // ----------------------------------------------------------------------------------------------------------------------------
-// // Codewars KATA 2023 02 23 - https://www.codewars.com/kata/514b92a657cdc65150000006/train/javascript
+// // Codewars KATA 2023 02 23 - https://www.codewars.com/kata/514b92a657cdc65150000006
 // function solution(number) {
 //   let sum = 0;
 //   for (let i = 0; i < number; i++) {
@@ -124,3 +124,16 @@
 // }
 
 // console.log(generateHashtag("code" + " ".repeat(140) + "wars"));
+
+// // ----------------------------------------------------------------------------------------------------------------------------
+// // Codewars KATA 2023 02 28 FAILED - couldn't find the solution without help - https://www.codewars.com/kata/52774a314c2333f0a7000688
+function validParentheses(parens) {
+  var n = 0;
+  for (var i = 0; i < parens.length; i++) {
+    if (parens[i] == "(") n++;
+    if (parens[i] == ")") n--;
+    if (n < 0) return false;
+  }
+
+  return n == 0;
+}
