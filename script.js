@@ -127,13 +127,47 @@
 
 // // ----------------------------------------------------------------------------------------------------------------------------
 // // Codewars KATA 2023 02 28 FAILED - couldn't find the solution without help - https://www.codewars.com/kata/52774a314c2333f0a7000688
-function validParentheses(parens) {
-  var n = 0;
-  for (var i = 0; i < parens.length; i++) {
-    if (parens[i] == "(") n++;
-    if (parens[i] == ")") n--;
-    if (n < 0) return false;
-  }
+// function validParentheses(parens) {
+//   var n = 0;
+//   for (var i = 0; i < parens.length; i++) {
+//     if (parens[i] == "(") n++;
+//     if (parens[i] == ")") n--;
+//     if (n < 0) return false;
+//   }
 
-  return n == 0;
+//   return n == 0;
+// }
+
+// // ----------------------------------------------------------------------------------------------------------------------------
+// // Codewars KATA 2023 02 28 #2 https://www.codewars.com/kata/51c8e37cee245da6b40000bd
+function solution(input, markers) {
+  let deletableLst = [];
+
+  markers.forEach((marker) => {
+    for (let i = 0; i < input.length; i++) {
+      let deletableStr = "";
+
+      if (input[i] === marker) {
+        while (input[i] !== "\n" && i < input.length) {
+          deletableStr += input[i];
+          i++;
+        }
+        deletableLst.push(deletableStr);
+      }
+    }
+  });
+
+  deletableLst.forEach((el) => {
+    input = input.replace(el, "");
+  });
+
+  input = input.trim().replace(" \n", "\n");
+
+  return input;
 }
+
+// prettier-ignore
+console.log(
+  solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
+)
+// result should == "apples, pears\ngrapes\nbananas"
