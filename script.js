@@ -139,35 +139,89 @@
 // }
 
 // // ----------------------------------------------------------------------------------------------------------------------------
-// // Codewars KATA 2023 02 28 #2 https://www.codewars.com/kata/51c8e37cee245da6b40000bd
-function solution(input, markers) {
-  let deletableLst = [];
+// // // Codewars KATA 2023 02 28 #2 https://www.codewars.com/kata/51c8e37cee245da6b40000bd
+// function solution(input, markers) {
+//   let deletableLst = [];
 
-  markers.forEach((marker) => {
-    for (let i = 0; i < input.length; i++) {
-      let deletableStr = "";
+//   markers.forEach((marker) => {
+//     for (let i = 0; i < input.length; i++) {
+//       let deletableStr = "";
 
-      if (input[i] === marker) {
-        while (input[i] !== "\n" && i < input.length) {
-          deletableStr += input[i];
-          i++;
-        }
-        deletableLst.push(deletableStr);
+//       if (input[i] === marker) {
+//         while (input[i] !== "\n" && i < input.length) {
+//           deletableStr += input[i];
+//           i++;
+//         }
+//         deletableLst.push(deletableStr);
+//       }
+//     }
+//   });
+
+//   deletableLst.forEach((el) => {
+//     input = input.replace(el, "");
+//   });
+
+//   input = input.trim().replace(" \n", "\n");
+
+//   return input;
+// }
+
+// // prettier-ignore
+// console.log(
+//   solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
+// )
+// // result should == "apples, pears\ngrapes\nbananas"
+
+// // ----------------------------------------------------------------------------------------------------------------------------
+// // Codewars KATA 2023 03 17 https://www.codewars.com/kata/521c2db8ddc89b9b7a0000c1
+snail = function (array) {
+  if (array[0].length === 0) return [];
+  if (array[0].length === 1) return array[0];
+
+  let res = [];
+  const loops = array.length; // because the array's length will change
+
+  for (let index = 0; index < loops; index++) {
+    array.forEach((el, idx) => {
+      // first row
+      if (idx === 0) {
+        array[idx].forEach((item, iidx) => {
+          res.push(item);
+        });
       }
-    }
-  });
 
-  deletableLst.forEach((el) => {
-    input = input.replace(el, "");
-  });
+      // every other row's last element
+      if (idx !== 0) {
+        res.push(el[el.length - 1]);
+        array[idx].splice(el.length - 1);
+      }
+    });
 
-  input = input.trim().replace(" \n", "\n");
+    array.splice(0, 1);
 
-  return input;
-}
+    array.reverse().forEach((el) => el.reverse());
+  }
+  return res;
+};
 
-// prettier-ignore
+// console.log(snail([[1]]));
+
+// console.log(
+//   snail([
+//     [1, 2, 3, 5],
+//     [4, 5, 6, 8],
+//     [7, 8, 9, 7],
+//     [6, 8, 9, 4],
+//   ])
+// );
+
 console.log(
-  solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
-)
-// result should == "apples, pears\ngrapes\nbananas"
+  snail([
+    [1, 2, 3, 4, 5],
+    [6, 7, 8, 9, 10],
+    [11, 12, 13, 14, 15],
+    [16, 17, 18, 19, 20],
+    [21, 22, 23, 24, 25],
+    [26, 27, 28, 29, 30],
+  ])
+);
