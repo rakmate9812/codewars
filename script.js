@@ -174,54 +174,108 @@
 
 // // ----------------------------------------------------------------------------------------------------------------------------
 // // Codewars KATA 2023 03 17 https://www.codewars.com/kata/521c2db8ddc89b9b7a0000c1
-snail = function (array) {
-  if (array[0].length === 0) return [];
-  if (array[0].length === 1) return array[0];
+// snail = function (array) {
+//   if (array[0].length === 0) return [];
+//   if (array[0].length === 1) return array[0];
 
-  let res = [];
-  const loops = array.length; // because the array's length will change
+//   let res = [];
+//   const loops = array.length; // because the array's length will change
 
-  for (let index = 0; index < loops; index++) {
-    array.forEach((el, idx) => {
-      // first row
-      if (idx === 0) {
-        array[idx].forEach((item, iidx) => {
-          res.push(item);
-        });
-      }
+//   for (let index = 0; index < loops; index++) {
+//     array.forEach((el, idx) => {
+//       // first row
+//       if (idx === 0) {
+//         array[idx].forEach((item, iidx) => {
+//           res.push(item);
+//         });
+//       }
 
-      // every other row's last element
-      if (idx !== 0) {
-        res.push(el[el.length - 1]);
-        array[idx].splice(el.length - 1);
-      }
-    });
+//       // every other row's last element
+//       if (idx !== 0) {
+//         res.push(el[el.length - 1]);
+//         array[idx].splice(el.length - 1);
+//       }
+//     });
 
-    array.splice(0, 1);
+//     array.splice(0, 1);
 
-    array.reverse().forEach((el) => el.reverse());
-  }
-  return res;
-};
+//     array.reverse().forEach((el) => el.reverse());
+//   }
+//   return res;
+// };
 
-// console.log(snail([[1]]));
+// // console.log(snail([[1]]));
+
+// // console.log(
+// //   snail([
+// //     [1, 2, 3, 5],
+// //     [4, 5, 6, 8],
+// //     [7, 8, 9, 7],
+// //     [6, 8, 9, 4],
+// //   ])
+// // );
 
 // console.log(
 //   snail([
-//     [1, 2, 3, 5],
-//     [4, 5, 6, 8],
-//     [7, 8, 9, 7],
-//     [6, 8, 9, 4],
+//     [1, 2, 3, 4, 5],
+//     [6, 7, 8, 9, 10],
+//     [11, 12, 13, 14, 15],
+//     [16, 17, 18, 19, 20],
+//     [21, 22, 23, 24, 25],
+//     [26, 27, 28, 29, 30],
 //   ])
 // );
 
-console.log(
-  snail([
-    [1, 2, 3, 4, 5],
-    [6, 7, 8, 9, 10],
-    [11, 12, 13, 14, 15],
-    [16, 17, 18, 19, 20],
-    [21, 22, 23, 24, 25],
-    [26, 27, 28, 29, 30],
-  ])
-);
+// // ----------------------------------------------------------------------------------------------------------------------------
+// // Codewars KATA 2023 03 19 https://www.codewars.com/kata/52223df9e8f98c7aa7000062
+// function rot13(str) {
+//   const original = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+//   const rot = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+//   let coded = "";
+
+//   for (let i = 0; i < str.length; i++) {
+//     const character = str[i];
+
+//     original.indexOf(character) === -1
+//       ? (coded += character)
+//       : (coded += rot[original.indexOf(character)]);
+//   }
+//   return coded;
+// }
+
+// console.log(rot13("he12llo"));
+// // ----------------------------------------------------------------------------------------------------------------------------
+// // Codewars KATA 2023 03 19 https://www.codewars.com/kata/52b7ed099cdc285c300001cd  -- FAILED - No idea how to implement the overlapping functionality, it would take too long to figure it out without help so I'm passing this one
+// function sumIntervals(intervals) {
+//   let sumOfIntervals = 0;
+//   const interval = intervals.map((el) => {
+//     return el[1] - el[0];
+//   });
+//   console.log(interval);
+// }
+
+// console.log(
+//   sumIntervals([
+//     [1, 2],
+//     [6, 10],
+//     [11, 15],
+//   ])
+// );
+
+// console.log(
+//   sumIntervals([
+//     [1, 4],
+//     [7, 10],
+//     [3, 5],
+//   ])
+// );
+// // ----------------------------------------------------------------------------------------------------------------------------
+// // Codewars KATA 2023 03 26 https://www.codewars.com/kata/52e1476c8147a7547a000811
+// const REGEXP = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$/;
+// console.log(REGEXP.test("asd"));
+// console.log(REGEXP.test("asdasd"));
+// console.log(REGEXP.test("asdasd12"));
+// console.log(REGEXP.test("asd12"));
+// console.log(REGEXP.test("asd123"));
+// console.log(REGEXP.test("Asdasd12"));
+// console.log(REGEXP.test("A_sdasd12"));
