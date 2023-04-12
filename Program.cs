@@ -66,6 +66,31 @@ public static class Kata546f922b54af40e1e90001da // getting the position of the 
     }
 }
 
+public class Persist55bf01e5a717a0d57e0000ec
+{
+    public static int Persistence(int n)
+    {
+        int counter = 0;
+        while (n > 9)
+        {
+            int newN = 1;
+            for (int i = 0; i < n.ToString().Count(); i++)
+            {
+                string strNum = $"{n.ToString()[i]}"; // convert the num to string this way, it gets problematic bc of c# tries to compile it to a char first - this works
+
+                int intNum = Int32.Parse(strNum); ;
+
+                newN = newN * intNum;
+
+            }
+            n = newN;
+            counter += 1;
+        }
+
+        return counter;
+    }
+}
+
 class Program
 {
     static void Main()
@@ -74,7 +99,8 @@ class Program
         // string result = Kata53dc23c68a0c93699800041d.Smash(new string[] { "this", "is", "a", "really", "long", "sentence" });
         // int result = Kata55d24f55d7dd296eb9000030.summation(8);
         // string result = Kata52fba66badcd10859f00097e.Disemvowel("Hi this is Mate");
-        string result = Kata546f922b54af40e1e90001da.AlphabetPosition("The sunset sets at twelve o' clock.");
+        // string result = Kata546f922b54af40e1e90001da.AlphabetPosition("The sunset sets at twelve o' clock.");
+        int result = Persist55bf01e5a717a0d57e0000ec.Persistence(999);
         Console.WriteLine(result);
     }
 }
