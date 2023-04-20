@@ -66,7 +66,7 @@ public static class Kata546f922b54af40e1e90001da // getting the position of the 
     }
 }
 
-public class Persist55bf01e5a717a0d57e0000ec
+public class Persist55bf01e5a717a0d57e0000ec //  takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
 {
     public static int Persistence(int n)
     {
@@ -110,7 +110,7 @@ public static class Kata55fd2d567d94ac3bc9000064 // in progress
     }
 }
 
-public class Kata5264d2b162488dc400000001
+public class Kata5264d2b162488dc400000001 // give back the sentence, if a word in it is longer than 4 words, reverse it
 {
     public static string SpinWords(string sentence)
     {
@@ -131,6 +131,26 @@ public class Kata5264d2b162488dc400000001
     }
 }
 
+public class Kata526571aae218b8ee490006f4 // return the binary number'ss sum of 1-s of an integer
+{
+    public static int CountBits(int n)
+    {
+        int bits = 0;
+        string binary = Convert.ToString(n, 2); // to base 2
+
+        foreach (char num in binary) // counting the bits
+        {
+            System.Console.WriteLine(num);
+            if (num == '1')
+            {
+                bits++;
+            }
+        }
+
+        return bits;
+    }
+}
+
 class Program
 {
     static void Main()
@@ -142,7 +162,8 @@ class Program
         // string result = Kata546f922b54af40e1e90001da.AlphabetPosition("The sunset sets at twelve o' clock.");
         // int result = Persist55bf01e5a717a0d57e0000ec.Persistence(999);
         // long result = Kata55fd2d567d94ac3bc9000064.RowSumOddNumbers(10);
-        string result = Kata5264d2b162488dc400000001.SpinWords("asd 12345");
+        // string result = Kata5264d2b162488dc400000001.SpinWords("asd 12345");
+        int result = Kata526571aae218b8ee490006f4.CountBits(1234);
         Console.WriteLine(result);
     }
 }
