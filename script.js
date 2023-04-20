@@ -279,3 +279,5 @@
 // console.log(REGEXP.test("asd123"));
 // console.log(REGEXP.test("Asdasd12"));
 // console.log(REGEXP.test("A_sdasd12"));
+// create an array with 100 numbers.
+const arr = Array.from({ length: 100 }, (_, i) => i + 1);

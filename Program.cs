@@ -91,6 +91,46 @@ public class Persist55bf01e5a717a0d57e0000ec
     }
 }
 
+public static class Kata55fd2d567d94ac3bc9000064 // in progress
+{
+
+
+    public static long RowSumOddNumbers(long n)
+    {
+        //int counter = 0;
+        // for (int i = 1; i <= n; i++)
+        // {
+        //     Console.WriteLine(i + "iteracio:");
+        //     for (int j = 1; j <= n; j += 2 + 1)
+        //     {
+        //         Console.WriteLine(j);
+        //     }
+        // }
+        return n;
+    }
+}
+
+public class Kata5264d2b162488dc400000001
+{
+    public static string SpinWords(string sentence)
+    {
+        string newSentence = "";
+        string[] words = sentence.Split(" ");
+        for (int i = 0; i < words.Length; i++)
+        {
+            if (words[i].Length > 4)
+            {
+                char[] reversedWordArray = words[i].ToCharArray();
+                Array.Reverse(reversedWordArray);
+                words[i] = String.Join("", reversedWordArray);
+            }
+            // System.Console.WriteLine(words[i]);
+        }
+        newSentence = String.Join(" ", words);
+        return newSentence;
+    }
+}
+
 class Program
 {
     static void Main()
@@ -100,7 +140,10 @@ class Program
         // int result = Kata55d24f55d7dd296eb9000030.summation(8);
         // string result = Kata52fba66badcd10859f00097e.Disemvowel("Hi this is Mate");
         // string result = Kata546f922b54af40e1e90001da.AlphabetPosition("The sunset sets at twelve o' clock.");
-        int result = Persist55bf01e5a717a0d57e0000ec.Persistence(999);
+        // int result = Persist55bf01e5a717a0d57e0000ec.Persistence(999);
+        // long result = Kata55fd2d567d94ac3bc9000064.RowSumOddNumbers(10);
+        string result = Kata5264d2b162488dc400000001.SpinWords("asd 12345");
         Console.WriteLine(result);
     }
 }
+
