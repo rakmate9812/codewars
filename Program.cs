@@ -151,6 +151,36 @@ public class Kata526571aae218b8ee490006f4 // return the binary number'ss sum of 
     }
 }
 
+public class Kata576757b1df89ecf5bd00073b // Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors
+{
+    public static string[] TowerBuilder(int nFloors)
+    {
+        string[] tower = new string[nFloors];
+        string stars = "";
+
+        for (int i = 0; i < nFloors * 2 - 1; i++) // create a string with the max number of stars
+        {
+            stars += "*";
+        }
+
+        for (int i = 0; i < nFloors; i++)
+        {
+            tower[i] = stars;
+
+            char[] starArray = stars.ToCharArray(); // convert into charray, replace the characters with the right index with a space 
+            starArray[0 + i] = ' ';
+
+            Array.Reverse(starArray); // doing it in both ends of the charray
+            starArray[0 + i] = ' ';
+
+            stars = String.Join("", starArray);
+        }
+
+        Array.Reverse(tower);
+        return tower;
+    }
+}
+
 class Program
 {
     static void Main()
@@ -163,8 +193,9 @@ class Program
         // int result = Persist55bf01e5a717a0d57e0000ec.Persistence(999);
         // long result = Kata55fd2d567d94ac3bc9000064.RowSumOddNumbers(10);
         // string result = Kata5264d2b162488dc400000001.SpinWords("asd 12345");
-        int result = Kata526571aae218b8ee490006f4.CountBits(1234);
-        Console.WriteLine(result);
+        // int result = Kata526571aae218b8ee490006f4.CountBits(1234);
+        string[] result = Kata576757b1df89ecf5bd00073b.TowerBuilder(19);
+        foreach (var item in result) System.Console.WriteLine(item);
     }
 }
 
